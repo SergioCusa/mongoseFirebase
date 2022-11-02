@@ -10,7 +10,7 @@ import ProductosMongo from "./contenedores/contMongo/productosM.js";
         url: String
     })
     
-const guardar = await productosMongo.save({nombre:"mesa ratona",material:"madera",precio:123,url:"asd331ww1w"})
+const guardar = await productosMongo.getById("6361ccfe7499d33bb25e0a06")
 console.log(guardar)
 
 })()

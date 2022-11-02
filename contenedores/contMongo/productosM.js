@@ -13,8 +13,8 @@ class ProductosMongo {
   
 async save(producto){
     try{
-        const doc = this.db.create(producto);
-        return doc;
+        const data = this.db.create(producto);
+        return data;
     }catch(e){
         console.error("No se pudo guardar producto",e)
     }
@@ -22,13 +22,19 @@ async save(producto){
 
 
 async getById(id){
+    try{
+        const data = this.db.find({_id:id})
+        return data
+    }catch(e){
+        console.error("no se pudo acceder al contenido",e)
+    }    
   
 }
 
 
 async getAll(){
     try{
-        const data = datathis.db.find({})
+        const data = await this.db.find({})
         return data
     }catch(e){
         console.error("no se pudo acceder al contenido",e)
@@ -37,12 +43,20 @@ async getAll(){
 
 
 async deleteById(id){
-  
+    try{
+        await this.db.deleteOne({_id:id})
+    }catch(e){
+     console.error("No se pudo eliminar archivo",e)
+    }
 }
 
 
-updateById(id, objetoNuevo) {
-   
+async updateById(element) {
+    try{
+        await this.db.replaceOne({_id:element._id},element)
+    }catch(e){
+        console.error("no se pudo modificar el contenido",e)
+    }
 }
 
 }
