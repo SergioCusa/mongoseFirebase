@@ -89,3 +89,8 @@ async deleteById(id){
 
 
 export default Carritoarch
+
+
+const carrito = new Carritoarch("./carrito.json")
+
+console.log(await carrito.save())

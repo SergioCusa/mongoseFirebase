@@ -20,8 +20,8 @@ async save(producto){
         console.log("Se guardo el objeto")
         console.log(objetos)
         }
-    catch (err){
-        console.log("No se pudo guardar archivo")
+    catch (e){
+        console.log("No se pudo guardar archivo",e)
         }
 }
 
@@ -86,3 +86,4 @@ updateById(id, objetoNuevo) {
 
 
 export default ProductosArch
+

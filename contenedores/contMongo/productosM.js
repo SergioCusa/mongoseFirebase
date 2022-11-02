@@ -1,7 +1,6 @@
 import mongoose from "mongoose"
 import config from "../config.js"
 
-
 await mongoose.connect(config.mongoDb.uri,config.mongoDb.options);
 
 

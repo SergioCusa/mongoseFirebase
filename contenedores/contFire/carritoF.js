@@ -1,7 +1,8 @@
-import mongoose from "mongoose"
-import config from "../config.js"
+import admin from "firebase-admin"
+import config from "../config"
 
-await mongoose.connect(config.mongoDb.uri,config.mongoDb.options);
+
+
 
 
 class CarritosMongo {
@@ -59,5 +60,3 @@ async updateById(element) {
 }
 
 }
-
-export default CarritosMongo
