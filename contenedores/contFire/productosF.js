@@ -13,6 +13,8 @@ const db = admin.firestore()
 class ProductosFire {
     constructor (coleccion){
         this.db = db.collection(coleccion)
+        this.time = new Date().toLocaleString
+
     }
       
   

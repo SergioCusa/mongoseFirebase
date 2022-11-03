@@ -3,6 +3,7 @@ import fs from "fs"
 class ProductosArch {
     constructor (archivo){
         this.archivo = archivo
+        this.time = new Date().toLocaleString()
     }
       
   

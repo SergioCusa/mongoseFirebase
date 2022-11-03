@@ -1,4 +1,4 @@
-import ProductosFire from "../../contenedores/contFire/productosF";
+import ProductosFire from "../../contenedores/contFire/productosF.js";
 
 class productosDaosFire extends ProductosFire{
     constructor(){

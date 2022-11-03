@@ -7,6 +7,8 @@ await mongoose.connect(config.mongoDb.uri,config.mongoDb.options);
 class CarritosMongo {
     constructor (coleccion,esquema){
         this.db = mongoose.model(coleccion,esquema)
+        
+
     }
       
   

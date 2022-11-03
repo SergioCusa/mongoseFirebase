@@ -1,5 +1,5 @@
 import admin from "firebase-admin"
-import config from "../config"
+import config from "../config.js"
 
 
 admin.initializeApp({
@@ -13,6 +13,7 @@ const db = admin.firestore()
 class CarritosFire {
     constructor (coleccion){
         this.db = db.collection(coleccion)
+        this.time = new Date().toLocaleString
     }
       
   
