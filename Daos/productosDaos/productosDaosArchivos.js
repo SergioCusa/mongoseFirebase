@@ -1,7 +1,7 @@
 import ProductosArch from "../../contenedores/contArchivo/productosA.js";
 
 class productosDaosArchivos extends ProductosArch {
-    constructor(){
+    constructor() {
         super("./productos.json")
     }
 }
