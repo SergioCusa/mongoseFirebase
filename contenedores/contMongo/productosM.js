@@ -16,7 +16,7 @@ class ProductosMongo {
     async save(producto) {
         try {
             const data = this.db.create(producto);
-            return data;
+            return {data,time:this.time};
         } catch (e) {
             console.error("No se pudo guardar producto", e)
         }

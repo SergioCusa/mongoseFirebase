@@ -1,6 +1,6 @@
-import ProductosFire from "../../contenedores/contFire/productosF.js";
+import ContFire from "../../contenedores/contFire/contFire.js";
 
-class productosDaosFire extends ProductosFire {
+class productosDaosFire extends ContFire {
     constructor() {
         super("productos")
     }

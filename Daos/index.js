@@ -1,5 +1,8 @@
 import * as dotenv from "dotenv";
+
 dotenv.config();
+
+console.log(process.env.TIPO)
 
 const daos = {
 
@@ -7,8 +10,8 @@ const daos = {
         const { default: carritosDaosArchivos } = await import("./carritosDaos/carritosDaosArchivos.js")
         const { default: productosDaosArchivos } = await import("./productosDaos/productosDaosArchivos.js")
         return {
-            carritosDao: new carritosDaosArchivos(),
-            productosDao: new productosDaosArchivos()
+            carrDao: new carritosDaosArchivos(),
+            prodDao: new productosDaosArchivos()
         }
     },
 
@@ -16,8 +19,8 @@ const daos = {
         const { default: carritosDaosFire } = await import("./carritosDaos/carritosDaosFire.js")
         const { default: productosDaosFire } = await import("./productosDaos/productosDaosFire.js")
         return {
-            carritosDao: new carritosDaosFire(),
-            productosDao: new productosDaosFire()
+            carrDao: new carritosDaosFire(),
+            prodDao: new productosDaosFire()
         }
     },
 
@@ -25,11 +28,12 @@ const daos = {
         const { default: carritosDaosMongo } = await import("./carritosDaos/carritosDaosMongo.js")
         const { default: productosDaosMongo } = await import("./productosDaos/productosDaosMongo.js")
         return {
-            carritosDao: new carritosDaosMongo(),
-            productosDao: new productosDaosMongo()
+            carrDao: new carritosDaosMongo(),
+            prodDao: new productosDaosMongo()
         }
     }
 
 }
 
-console.log(await daos[process.env.TIPO]())
+export default daos[process.env.TIPO]
+

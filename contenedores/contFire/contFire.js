@@ -11,7 +11,7 @@ const connection =  admin.initializeApp({
 
 const db = admin.firestore()
 
-class CarritosFire {
+class ContFire {
     constructor(coleccion) {
         this.db = db.collection(coleccion)
         this.time = new Date().toLocaleString()
@@ -21,7 +21,7 @@ class CarritosFire {
     async save(carrito) {
         try {
             const data = await this.db.add(carrito)
-            return { ...carrito, id: data.id }
+            return { ...carrito, id: data.id,time:this.time }
         } catch (e) {
             console.error("No se pudo guardar carrito", e)
         }
@@ -74,4 +74,4 @@ class CarritosFire {
 
 }
 
-export default CarritosFire
+export default ContFire

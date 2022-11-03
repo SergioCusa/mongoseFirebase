@@ -1,6 +1,6 @@
-import CarritosFire from "../../contenedores/contFire/carritoF.js";
+import ContFire from "../../contenedores/contFire/contFire.js";
 
-class carritosDaosFire extends CarritosFire {
+class carritosDaosFire extends ContFire {
     constructor() {
         super("carritos")
     }
