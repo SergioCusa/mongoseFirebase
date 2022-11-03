@@ -1,6 +1,6 @@
 import fs from "fs"
 
-class Carritoarch {
+class CarritosArch {
     constructor (archivo){
         this.archivo = archivo
         this.productos = []
@@ -88,7 +88,7 @@ async deleteById(id){
 }
 
 
-export default Carritoarch
+export default CarritosArch
 
 
 const carrito = new Carritoarch("./carrito.json")
