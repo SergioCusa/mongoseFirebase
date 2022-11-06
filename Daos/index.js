@@ -4,6 +4,7 @@ dotenv.config();
 
 console.log(process.env.TIPO)
 
+
 const daos = {
 
     arch: async () => {
@@ -28,7 +29,7 @@ const daos = {
         const { default: carritosDaosMongo } = await import("./carritosDaos/carritosDaosMongo.js")
         const { default: productosDaosMongo } = await import("./productosDaos/productosDaosMongo.js")
         return {
-            carrDao: new carritosDaosMongo(),
+            carrDao: new  carritosDaosMongo(),
             prodDao: new productosDaosMongo()
         }
     }
