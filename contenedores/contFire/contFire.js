@@ -2,11 +2,11 @@ import admin from "firebase-admin"
 import config from "../config.js"
 
 
-const connection =  admin.initializeApp({
+const connection = admin.initializeApp({
     credential: admin.credential.cert(config.fireBase),
     databaseURL: "https://ser-fire-coder.firebaseio.com"
 
-}) 
+})
 
 
 const db = admin.firestore()
@@ -21,7 +21,7 @@ class ContFire {
     async save(carrito) {
         try {
             const data = await this.db.add(carrito)
-            return { ...carrito, id: data.id,time:this.time }
+            return { ...carrito, id: data.id, time: this.time }
         } catch (e) {
             console.error("No se pudo guardar carrito", e)
         }
@@ -42,14 +42,15 @@ class ContFire {
 
     async getAll() {
         try {
+            
             const result = []
-            const snapshot = await this.coleccion.get();
+            const snapshot = await this.db.get();
             snapshot.forEach(doc => {
                 result.push({ id: doc.id, ...doc.data() })
             })
             return result
         } catch (error) {
-            throw new Error(`Error al listar todo: ${error}`)
+            console.error(`error al listar ${error}`)
         }
     }
 

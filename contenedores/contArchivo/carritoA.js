@@ -16,7 +16,7 @@ class CarritosArch {
             id: carritos.length + 1,
             productos: [],
             timestamp: this.time,
-            total: 0
+            
         }
         carritos.push(crearCar)
         const productosString = JSON.stringify(carritos)

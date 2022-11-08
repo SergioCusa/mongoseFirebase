@@ -64,3 +64,4 @@ class ProductosMongo {
 }
 
 export default ProductosMongo
+

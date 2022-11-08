@@ -52,7 +52,7 @@ class ProductosArch {
     }
 
 
-    async deleteById(id) {
+    async deleteById(id)  {
         try {
             const data = await fs.promises.readFile(`${this.archivo}`, "utf-8")
             const parse = JSON.parse(data)
@@ -67,9 +67,11 @@ class ProductosArch {
     }
 
 
-    updateById(id, objetoNuevo) {
-        const data = fs.readFileSync(this.archivo, "utf-8");
-        let dataParseada = JSON.parse(data);
+    async updateById(id, objetoNuevo) {
+        try{
+
+            const data = await fs.readFileSync(this.archivo, "utf-8");
+            let dataParseada = JSON.parse(data);
         let productoViejo = dataParseada.find((objeto) => objeto.id === id);
         let mensaje = "Se reemplazo el producto";
         if (productoViejo === undefined) {
@@ -78,8 +80,11 @@ class ProductosArch {
         let productosFiltrados = dataParseada.filter((objeto) => objeto.id !== id);
         productoViejo = { id, ...objetoNuevo };
         productosFiltrados.push(productoViejo);
-        fs.writeFileSync(this.archivo, JSON.stringify(productosFiltrados, null, 2));
+        await fs.writeFileSync(this.archivo, JSON.stringify(productosFiltrados, null, 2));
         return mensaje;
+    }catch(e){
+        console.error(e)
+    }
     }
 }
 

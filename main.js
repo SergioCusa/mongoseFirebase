@@ -1,6 +1,9 @@
+
 import app from "./server.js"
 
-
+app.get("/",(req,res)=>{
+    res.send("hola")
+})
 
 try{
     const server = app.listen(8080,()=>{

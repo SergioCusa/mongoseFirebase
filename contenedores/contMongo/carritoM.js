@@ -7,6 +7,7 @@ await mongoose.connect(config.mongoDb.uri, config.mongoDb.options);
 class CarritosMongo {
     constructor(coleccion, esquema) {
         this.db = mongoose.model(coleccion, esquema)
+        this.time = new Date().toLocaleString()
 
 
     }
@@ -14,6 +15,7 @@ class CarritosMongo {
 
     async save(carrito) {
         try {
+            
             const data = this.db.create(carrito);
             console.log(data)
         } catch (e) {

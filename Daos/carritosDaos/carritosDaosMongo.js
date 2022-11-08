@@ -4,7 +4,7 @@ class carritostosDaosMongo extends CarritosMongo {
     constructor() {
         super("carritos", {
             productos: { type: [], default: [] },
-            
+            timestamp: {type: Date , default : Date.now}
         })
     }
 }

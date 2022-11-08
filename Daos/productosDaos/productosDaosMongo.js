@@ -6,7 +6,7 @@ class productosDaosMongo extends ProductosMongo {
             nombre: { type: String, required: true },
             material: { type: String, required: true },
             precio: { type: Number, required: true },
-            url: String
+            timestamp: {type: Date , default : Date.now}
         })
     }
 }
